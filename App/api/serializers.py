@@ -5,8 +5,8 @@ from App.models import *
 class MovieSerializer(serializers.ModelSerializer):
     class Meta:
         model = Movie
-     #   fields = "__all__"
-        exclude = ['name']
+        fields = "__all__"
+        # exclude = ['name']
 
 
 """class MovieSerializer(serializers.Serializer):
