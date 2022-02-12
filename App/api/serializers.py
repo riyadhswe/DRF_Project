@@ -2,7 +2,13 @@ from rest_framework import serializers
 from App.models import *
 
 
-class MovieSerializer(serializers.Serializer):
+class MovieSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Movie
+        fields = "__all__"
+
+
+"""class MovieSerializer(serializers.Serializer):
     id = serializers.IntegerField(read_only=True)
     name = serializers.CharField()
     description = serializers.CharField()
@@ -17,3 +23,4 @@ class MovieSerializer(serializers.Serializer):
         instance.active = validated_data.get('active',instance.active)
         instance.save()
         return instance
+"""
