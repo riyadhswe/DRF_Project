@@ -3,10 +3,16 @@ from App.models import *
 
 
 class MovieSerializer(serializers.ModelSerializer):
+    len_name = serializers.SerializerMethodField()
+
     class Meta:
         model = Movie
         fields = "__all__"
         # exclude = ['name']
+
+    @staticmethod
+    def get_len_name(object):
+        return len(object.name)
 
 
 """class MovieSerializer(serializers.Serializer):
