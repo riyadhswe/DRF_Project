@@ -1,6 +1,6 @@
 from django.urls import path
-from App.api.views import movie_list,movie_details
+from App.api.views import StreamPlatformAV,WatchlistAV
 urlpatterns = [
-    path('',movie_list,name='movie_list'),
-    path('<int:pk>',movie_details,name='movie_details'),
+    path('',WatchlistAV.as_view(),name='strem'),
+    path('s',StreamPlatformAV.as_view(),name='movie_details'),
 ]
